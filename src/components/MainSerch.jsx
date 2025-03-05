@@ -2,14 +2,28 @@ import PropTypes from "prop-types";
 import { useState } from "react";
 // import { motion } from "motion/react";
 import { motion } from "framer-motion";
+
+const simpleSearchInputs = [
+  "Marka Samochodu",
+  "Model pojazdu",
+  "cena do",
+  "Rok produkcji od",
+  "Typ nadwozia",
+  "rodzaj paliwa",
+];
+
 function InputSerch({ size = "1", insideText }) {
+  // Sprawdzamy, czy input jest nowy (nie ma go w SimpleSearch)
+  const isNew = !simpleSearchInputs.includes(insideText);
+
   return (
     <motion.input
       layout
       layoutId={insideText}
-      // initial={{ scale: 0 }}
-      // animate={{ scale: 1 }}
-      // transition={{ duration: 0.4, ease: "easeInOut" }}
+      // Animacja wejścia tylko dla nowych elementów
+      initial={isNew ? { scale: 0, opacity: 0 } : false}
+      animate={isNew ? { scale: 1, opacity: 1 } : false}
+      exit={isNew ? { scale: 0 } : false}
       type="text"
       value={insideText}
       id={`${insideText}text`}
