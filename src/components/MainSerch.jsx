@@ -32,6 +32,10 @@ function InputSerch({ size = "1", insideText }) {
   );
 }
 
+function DivSearch() {
+  return <div></div>;
+}
+
 InputSerch.propTypes = {
   size: PropTypes.string,
   insideText: PropTypes.string.isRequired,
