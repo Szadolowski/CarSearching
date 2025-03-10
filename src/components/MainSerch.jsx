@@ -2,6 +2,34 @@ import PropTypes from "prop-types";
 import { useState } from "react";
 // import { motion } from "motion/react";
 import { motion } from "framer-motion";
+import DivSearch from "./DivSearch";
+
+const marki = [
+  "Audi",
+  "BMW",
+  "Mercedes-Benz",
+  "Volkswagen",
+  "Toyota",
+  "Honda",
+  "Ford",
+  "Chevrolet",
+  "Hyundai",
+  "Kia",
+  "Mazda",
+  "Nissan",
+  "Porsche",
+  "Ferrari",
+  "Lamborghini",
+  "Volvo",
+  "Jaguar",
+  "Land Rover",
+  "Lexus",
+  "Subaru",
+  "Jeep",
+  "Alfa Romeo",
+  "Maserati",
+  "Bentley",
+];
 
 const simpleSearchInputs = [
   "Marka Samochodu",
@@ -32,10 +60,6 @@ function InputSerch({ size = "1", insideText }) {
   );
 }
 
-function DivSearch() {
-  return <div></div>;
-}
-
 InputSerch.propTypes = {
   size: PropTypes.string,
   insideText: PropTypes.string.isRequired,
@@ -54,7 +78,12 @@ let SimpleSearch = ({ setChange }) => {
       // animate={{ scale: 1 }}
     >
       <div className="bg-gray-50 rounded-2xl shadow-2xl border-black p-12 grid grid-cols-4 grid-rows-3 gap-x-4 gap-y-8 place-items-center">
-        <InputSerch insideText={"Marka Samochodu"} size={2} />
+        <DivSearch
+          insideText={"Marka Samochodu"}
+          size={2}
+          marki={marki}
+          simpleSearchInputs={simpleSearchInputs}
+        />
         <InputSerch insideText={"Model pojazdu"} size={2} />
         <InputSerch insideText={"cena do"} />
         <InputSerch insideText={"Rok produkcji od"} />
