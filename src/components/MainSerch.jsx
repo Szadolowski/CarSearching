@@ -3,6 +3,8 @@ import { useState } from "react";
 // import { motion } from "motion/react";
 import { motion } from "framer-motion";
 import DivSearch from "./DivSearch";
+import { useRef } from "react";
+import DialogBlock from "./DialogBlock";
 
 const marki = [
   "Audi",
@@ -110,6 +112,11 @@ SimpleSearch.propTypes = {
 };
 
 let AdvanceSearch = ({ setChange }) => {
+  const dialogRef = useRef(null);
+  function handleClick() {
+    dialogRef.current.showModal();
+  }
+
   return (
     <motion.div
       layout
@@ -120,7 +127,7 @@ let AdvanceSearch = ({ setChange }) => {
       // initial={{ scale: 0.8 }}
       // animate={{ scale: 1 }}
     >
-      <div className="bg-gray-50 rounded-2xl shadow-2xl border-black p-12 grid grid-cols-6 grid-rows-4 gap-x-4 gap-y-8 place-items-center">
+      <div className="bg-gray-50 rounded-2xl shadow-2xl border-black p-12 grid grid-cols-6 grid-rows-5 gap-x-4 gap-y-8 place-items-center">
         <InputSerch insideText={"Marka Samochodu"} size={2} />
         <InputSerch insideText={"Model pojazdu"} size={2} />
         <InputSerch insideText={"Generacja"} size={2} />
@@ -133,13 +140,35 @@ let AdvanceSearch = ({ setChange }) => {
         <InputSerch insideText={"Typ nadwozia"} size={2} />
         <InputSerch insideText={"rodzaj paliwa"} size={2} />
         <span
-          className="col-span-2 text-blue-600 font-bold cursor-pointer"
+          className="col-span-2 text-blue-600 font-bold cursor-pointer hover:text-blue-800"
           onClick={() => {
             setChange(false);
           }}
         >
           Wyszukiwanie {<br></br>} Zaawansowane
         </span>
+        <span
+          className="col-span-2 cursor-pointer hover:font-bold flex justify-between items-center w-full px-10"
+          onClick={() => {
+            handleClick();
+          }}
+        >
+          <DialogBlock ref={dialogRef} blockType={1} />
+          <p>Silnik i napęd</p> <p className="text-4xl">{">"}</p>
+        </span>
+        <span
+          className="col-span-2 cursor-pointer hover:font-bold flex justify-between items-center w-full px-10"
+          onClick={() => {}}
+        >
+          <p>Nadwozie</p> <p className="text-4xl">{">"}</p>
+        </span>
+        <span
+          className="col-span-2 cursor-pointer hover:font-bold flex justify-between items-center w-full px-10"
+          onClick={() => {}}
+        >
+          <p>Dodatkowe wyposażenie</p> <p className="text-4xl">{">"}</p>
+        </span>
+
         <button className="col-span-2 w-full h-full bg-red-700 text-amber-50 font-bold rounded-xl">
           Szukaj
         </button>
@@ -162,8 +191,6 @@ function MainSerch() {
       ) : (
         <SimpleSearch setChange={setAdvanceMode} />
       )}
-      {/* <SimpleSearch />
-      <AdvanceSearching /> */}
     </>
   );
 }
