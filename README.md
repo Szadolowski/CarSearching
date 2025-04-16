@@ -1,11 +1,11 @@
 # 🚗 CarSearching
 
-Blok wyszukiwania samochodów w formie nowoczesnego komponentu front-endowego.  
-Zaprojektowany z myślą o estetyce, intuicyjności i animacjach – bez implementacji backendu.
+A modern front-end search block for cars – designed for clarity, responsiveness, and smooth animations.  
+This project focuses purely on the front-end interface without backend integration.
 
 ---
 
-## 🛠️ Technologie
+## 🛠️ Technologies
 
 ![ReactJS](https://img.shields.io/badge/react-19.0.0-61DBFB?style=for-the-badge&logo=react&logoColor=white)
 ![TailwindCSS](https://img.shields.io/badge/TailwindCSS-38bdf8?style=for-the-badge&logo=tailwindcss&logoColor=white)
@@ -13,34 +13,33 @@ Zaprojektowany z myślą o estetyce, intuicyjności i animacjach – bez impleme
 
 ---
 
-## 🎯 Demo
+## 🎯 Live Demo
 
-🔗 **Sprawdź online:** [link-do-demo](#)
-
----
-
-## 📸 Screeny
-
-| Widok prosty                   | ![simple](./public/simple.png)             |
-| ------------------------------ | ------------------------------------------ |
-| Widok zaawansowany             | ![advance](./public/advance.png)           |
-| Modal                          | ![dialog](./public/Dialog.png)             |
-| ------------------------------ | ------------------------------------------ |
-| Wybór marki                    | ![divsearching](./public/divSearching.png) |
+🔗 **Check it live:** [demo-link](https://carsearching.netlify.app/)
 
 ---
 
-## ✨ Kluczowe cechy
+## 📸 Screenshots
 
-- 🔁 Tryb prosty i zaawansowany do wyszukiwania aut
-- 💡 Responsywny i przejrzysty layout
-- ✅ Komponenty dynamiczne z obsługą selekcji i list rozwijanych
-- 🧩 Dialogi modalne z dodatkowymi parametrami wyszukiwania
-- 🎬 Animacje `framer-motion` przy renderowaniu elementów
+| Simple View    | ![simple](./public/simple.png)             |
+| -------------- | ------------------------------------------ |
+| Advanced View  | ![advance](./public/advance.png)           |
+| Modal          | ![dialog](./public/Dialog.png)             |
+| Brand Selector | ![divsearching](./public/divSearching.png) |
 
 ---
 
-## 🔍 Przykładowy kod – komponent `DivSearch`
+## ✨ Key Features
+
+- 🔁 Toggle between simple and advanced search modes
+- 💡 Clean and responsive layout
+- ✅ Dynamic components with checkbox-based dropdown lists
+- 🧩 Modal dialogs for additional search options
+- 🎬 Smooth entry animations using `framer-motion`
+
+---
+
+## 🔍 Code Example – `DivSearch` component
 
 ```jsx
 <motion.div
@@ -52,31 +51,37 @@ Zaprojektowany z myślą o estetyce, intuicyjności i animacjach – bez impleme
   exit={isNew ? { scale: 0 } : false}
   className={`col-span-${size} bg-gray-300 rounded-[6px] w-full h-full ease-in-out relative`}
 >
-  {/* Zawartość dynamiczna */}
+  {/* Dynamic content */}
 </motion.div>
 ```
 
 ---
 
-## 📦 Instalacja
+## 📦 Installation
 
-1. Sklonuj repozytorium:
+1. Clone the repository:
    ```bash
-   git clone https://github.com/twoj-login/carsearching.git
+   git clone https://github.com/your-username/carsearching.git
    cd carsearching
    ```
-2. Zainstaluj zależności:
+2. Install dependencies:
    ```bash
    npm install
    ```
-3. Uruchom projekt lokalnie:
+3. Start the development server:
    ```bash
    npm run dev
    ```
 
 ---
 
-## 🧾 Licencja
+## 🧾 License
 
-Projekt open-source. Możesz go modyfikować i rozwijać zgodnie z własnymi potrzebami.  
-[MIT License](LICENSE)
+This project is open source and available under the [MIT License](LICENSE).
+
+---
+
+## 🤝 Contributing
+
+Have an idea for improvement or want to add a backend?  
+**Feel free to open a pull request or contact me directly!**
