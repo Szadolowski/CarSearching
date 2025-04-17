@@ -72,16 +72,3 @@ This project focuses purely on the front-end interface without backend integrati
    ```bash
    npm run dev
    ```
-
----
-
-## 🧾 License
-
-This project is open source and available under the [MIT License](LICENSE).
-
----
-
-## 🤝 Contributing
-
-Have an idea for improvement or want to add a backend?  
-**Feel free to open a pull request or contact me directly!**

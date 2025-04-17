@@ -1,25 +1,35 @@
 import PropTypes from "prop-types";
 import InputSerch from "./InputSearch";
+import { createPortal } from "react-dom";
 
 const DialogBlock = ({ ref, blockType }) => {
-  return (
-    <dialog ref={ref} className="z-50 bg-transparent backdrop:bg-black/40 border-none p-0">
+  return createPortal(
+    <dialog
+      ref={ref}
+      className="z-50 bg-transparent backdrop:bg-black/40 border-none p-0 w-full h-full content-center items-center justify-center"
+    >
       {blockType === 1 ? (
-        <div className="fixed top-3/12 left-1/2 -translate-x-1/2 -translate-y-11/12 bg-white rounded-2xl shadow-xl p-6 w-full max-w-[80vw]">
-          <h2 className="font-bold text-2xl">Silnik i Napęd</h2>
-          <div className="grid grid-cols-4 grid-rows-2 gap-4 mt-4">
-            <InputSerch />
-            <InputSerch />
-            <InputSerch />
-            <InputSerch />
+        <div className="w-full h-full flex justify-center items-center">
+          <div className="fixed bg-white rounded-2xl shadow-xl p-6 w-full max-w-[80vw] space-y-12">
+            <h2 className="font-bold text-2xl">Silnik i Napęd</h2>
+            <div className="grid grid-cols-4 grid-rows-2 gap-4 mt-4">
+              <h3 className="col-span-2 text-[20px]">Pojemność silnika</h3>
+              <h3 className="col-span-2 text-[20px]">Moc</h3>
+              <InputSerch insideText={"Pojemność od"} />
+              <InputSerch insideText={"Pojemność do"} />
+              <InputSerch insideText={"Moc od"} />
+              <InputSerch insideText={"Mod do"} />
+            </div>
+            <form method="dialog">
+              <button className="dialog-close bg-orange-600 rounded-2xl px-2 py-1.5 font-bold border-gray-500 border-[1px] hover:bg-orange-700 transition-all duration-300 ease-in-out cursor-pointer">
+                Close
+              </button>
+            </form>
           </div>
-          <p>This is a dialog block.</p>
-          <form method="dialog">
-            <button className="dialog-close">Close</button>
-          </form>
         </div>
       ) : null}
-    </dialog>
+    </dialog>,
+    document.body
   );
 };
 
