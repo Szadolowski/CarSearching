@@ -7,7 +7,7 @@ This project focuses purely on the front-end interface without backend integrati
 
 ## 🛠️ Technologies
 
-![ReactJS](https://img.shields.io/badge/react-19.0.0-61DBFB?style=for-the-badge&logo=react&logoColor=white)
+![ReactJS](https://img.shields.io/badge/react-19.1-61DBFB?style=for-the-badge&logo=react&logoColor=white)
 ![TailwindCSS](https://img.shields.io/badge/TailwindCSS-38bdf8?style=for-the-badge&logo=tailwindcss&logoColor=white)
 ![FrameMotion](https://img.shields.io/badge/FrameMotion-yellow?style=for-the-badge)
 
